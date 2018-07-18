@@ -37,13 +37,13 @@
         "default": "default"
       },
       {
-        "name": "Colors prefix in styled components",
+        "name": "Colors theme prefix in styled components",
         "type": "text",
         "id": "colorThemePrefix",
         "default": ""
       },
       {
-        "name": "Fonts prefix in styled components",
+        "name": "Fonts theme prefix in styled components",
         "type": "text",
         "id": "fontThemePrefix",
         "default": ""

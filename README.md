@@ -49,7 +49,7 @@ const colors = {
 };
 ```
 
-#### Colors prefix in styled components
+#### Colors theme prefix in styled components
 
 Prefix for all color type vars in styled components. Use this option if you have a certain namespace in your theme for your colors. Default output:
 ```js
@@ -64,7 +64,7 @@ const RedView = glamorous.view((props, theme) => ({
 }))
 ```
 
-#### Fonts prefix in styled components
+#### Fonts theme prefix in styled components
 
 Prefix for all font type vars in styled components. Use this option if you have a certain namespace in your theme for your fonts. Default output:
 ```js

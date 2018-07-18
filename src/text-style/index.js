@@ -32,24 +32,9 @@ const generateTextComponentFromTextStyle = (
     project.findColorEqual(textStyle.color) ||
     getColorStringByFormat(textStyle.color, colorFormat)
   const colorValue = color.name
-    ? `theme${colorThemePrefix ? '.' + colorThemePrefix : ''}.${color.name}`
+    ? `theme.${colorThemePrefix || 'color'}.${color.name}`
     : color
-  const styleObj = {
-    fontFamily: `theme${
-      fontThemePrefix ? '.' + fontThemePrefix : ''
-    }.${generateName(textStyle.fontFace)}`,
-    fontSize:
-      textStyle.fontSize &&
-      round(textStyle.fontSize, NUMERICAL_DECIMAL_PRECISION),
-    lineHeight:
-      textStyle.lineHeight &&
-      round(textStyle.lineHeight, NUMERICAL_DECIMAL_PRECISION),
-    letterSpacing:
-      textStyle.letterSpacing &&
-      round(textStyle.letterSpacing, NUMERICAL_DECIMAL_PRECISION),
-    textAlign: textStyle.textAlign,
-    color: colorValue
-  }
+  const styleObj = { fontFamily: `theme.${fontThemePrefix || 'font'}.${generateName(textStyle.fontFace)}`, fontSize: textStyle.fontSize && round(textStyle.fontSize, NUMERICAL_DECIMAL_PRECISION), lineHeight: textStyle.lineHeight && round(textStyle.lineHeight, NUMERICAL_DECIMAL_PRECISION), letterSpacing: textStyle.letterSpacing && round(textStyle.letterSpacing, NUMERICAL_DECIMAL_PRECISION), textAlign: textStyle.textAlign, color: colorValue };
   let textStylesStr = JSON.stringify(styleObj, null, JSON_SPACING)
   textStylesStr = textStylesStr
     .replace(/"(.+)":/g, '$1:')
