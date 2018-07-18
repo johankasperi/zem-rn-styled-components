@@ -17,15 +17,15 @@ const base = {
 
 Sample text components output:
 ```js
-const SampleTextStyle = glamorous(Base)((props, theme) => ({
-  fontFamily: theme.font.sfProTextRegular,
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  fontFamily: theme.font.arial,
   fontSize: 20,
   textAlign: "left",
   color: theme.color.black
 }))
 
-const SampleTextStyleWithColor = glamorous(Base)((props, theme) => ({
-  fontFamily: theme.font.sfProTextRegular,
+const SampleTextStyleWithColor = glamorous.text((props, theme) => ({
+  fontFamily: theme.font.arial,
   fontSize: 20,
   textAlign: "left",
   color: theme.color.red
@@ -49,9 +49,24 @@ const colors = {
 };
 ```
 
-#### Colors theme prefix in styled components
+#### Text base component
 
-Prefix for all color type vars in styled components. Use this option if you have a certain namespace in your theme for your colors. Default output:
+Set the base component for all texts. Default output:
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  fontSize: 20
+}))
+```
+With base component `Base`:
+```js
+const SampleTextStyle = glamorous(Base)((props, theme) => ({
+  fontSize: 20
+}))
+```
+
+#### Theme namespace for colors in styled components
+
+Namespace for all color type vars in styled components. Use this option if you have a certain namespace in your theme for your colors. Default output:
 ```js
 const RedView = glamorous.view((props, theme) => ({
   backgroundColor: theme.color.red
@@ -64,17 +79,17 @@ const RedView = glamorous.view((props, theme) => ({
 }))
 ```
 
-#### Fonts theme prefix in styled components
+#### Theme namespace for texts in styled components
 
-Prefix for all font type vars in styled components. Use this option if you have a certain namespace in your theme for your fonts. Default output:
+Namespace for all font type vars in styled components. Use this option if you have a certain namespace in your theme for your fonts. Default output:
 ```js
-const ArialText = glamorous(Base)((props, theme) => ({
+const ArialText = glamorous.text((props, theme) => ({
   fontFamily: theme.font.arial
 }))
 ```
 With namespace `V2.Font`:
 ```js
-const ArialText = glamorous(Base)((props, theme) => ({
+const ArialText = glamorous.text((props, theme) => ({
   fontFamily: theme.V2.Font.arial
 }))
 ```

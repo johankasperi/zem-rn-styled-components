@@ -37,13 +37,19 @@
         "default": "default"
       },
       {
-        "name": "Colors theme prefix in styled components",
+        "name": "Text base component",
+        "type": "text",
+        "id": "textBaseComponent",
+        "default": ""
+      },
+      {
+        "name": "Theme namespace for colors in styled components",
         "type": "text",
         "id": "colorThemePrefix",
         "default": ""
       },
       {
-        "name": "Fonts theme prefix in styled components",
+        "name": "Theme namespace for fonts in styled components",
         "type": "text",
         "id": "fontThemePrefix",
         "default": ""

@@ -17,14 +17,14 @@ const base = {
 
 Sample text components output:
 ```js
-const SampleTextStyle = glamorous(Base)((props, theme) => ({
+const SampleTextStyle = glamorous.text((props, theme) => ({
   fontFamily: theme.font.sfProTextRegular,
   fontSize: 20,
   textAlign: "left",
   color: theme.color.black
 }))
 
-const SampleTextStyleWithColor = glamorous(Base)((props, theme) => ({
+const SampleTextStyleWithColor = glamorous.text((props, theme) => ({
   fontFamily: theme.font.sfProTextRegular,
   fontSize: 20,
   textAlign: "left",
@@ -49,9 +49,9 @@ const colors = {
 };
 ```
 
-#### Colors prefix in styled components
+#### Theme namespace for colors in styled components
 
-Prefix for all color type vars in styled components. Use this option if you have a certain namespace in your theme for your colors. Default output:
+Namespace for all color type vars in styled components. Use this option if you have a certain namespace in your theme for your colors. Default output:
 ```js
 const RedView = glamorous.view((props, theme) => ({
   backgroundColor: theme.color.red
@@ -64,17 +64,17 @@ const RedView = glamorous.view((props, theme) => ({
 }))
 ```
 
-#### Fonts prefix in styled components
+#### Theme namespace for texts in styled components
 
-Prefix for all font type vars in styled components. Use this option if you have a certain namespace in your theme for your fonts. Default output:
+Namespace for all font type vars in styled components. Use this option if you have a certain namespace in your theme for your fonts. Default output:
 ```js
-const ArialText = glamorous(Base)((props, theme) => ({
+const ArialText = glamorous.text((props, theme) => ({
   fontFamily: theme.font.arial
 }))
 ```
 With namespace `V2.Font`:
 ```js
-const ArialText = glamorous(Base)((props, theme) => ({
+const ArialText = glamorous.text((props, theme) => ({
   fontFamily: theme.V2.Font.arial
 }))
 ```
