@@ -1,0 +1,71 @@
+{
+  "name": "dn-rn-zem-extension",
+  "version": "0.1.0",
+  "description": "Zepling extension to generate DN type styled components",
+  "scripts": {
+    "start": "zem start",
+    "build": "zem build",
+    "clean": "zem clean",
+    "exec": "zem exec"
+  },
+  "zeplin": {
+    "displayName": "React Native Styled Components",
+    "options": [
+      {
+        "name": "Color format",
+        "type": "picker",
+        "id": "colorFormat",
+        "submenu": true,
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "HEX",
+            "value": "hex"
+          },
+          {
+            "name": "RGB",
+            "value": "rgb"
+          },
+          {
+            "name": "HSL",
+            "value": "hsl"
+          }
+        ],
+        "default": "default"
+      },
+      {
+        "name": "Colors prefix in styled components",
+        "type": "text",
+        "id": "colorThemePrefix",
+        "default": ""
+      },
+      {
+        "name": "Fonts prefix in styled components",
+        "type": "text",
+        "id": "fontThemePrefix",
+        "default": ""
+      }
+    ],
+    "projectTypes": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {
+    "zem": "^0.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.5",
+    "babel-jest": "22.4.4",
+    "babel-plugin-module-resolver": "3.1.1",
+    "eslint": "5.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "3.1.0",
+    "prettier-eslint-cli": "^4.7.1"
+  }
+}
