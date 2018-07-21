@@ -1,5 +1,4 @@
-import { JSON_SPACING } from '../constants'
-import { getColorStringByFormat } from '../utils'
+import { getColorStringByFormat, createJavascriptStringFromObj } from '../utils'
 
 const generateColorObjectFromProject = (options, project, colors) => {
   const colorsObject = {}
@@ -11,8 +10,7 @@ const generateColorObjectFromProject = (options, project, colors) => {
       )
     }
   }
-  let colorsStylesStr = JSON.stringify(colorsObject, null, JSON_SPACING)
-  colorsStylesStr = colorsStylesStr.replace(/"(.+)":/g, '$1:')
+  const colorsStylesStr = createJavascriptStringFromObj(colorsObject)
   return `const base = ${colorsStylesStr}`
 }
 

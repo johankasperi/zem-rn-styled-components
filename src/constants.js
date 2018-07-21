@@ -133,4 +133,11 @@ export const HTML_TAGS = [
   'video',
   'wbr'
 ]
-export const OPTION_NAMES = { COLOR_FORMAT: "colorFormat", TEXT_BASE_COMPONENT: "textBaseComponent", COLOR_THEME_PREFIX: "colorThemePrefix", FONT_THEME_PREFIX: "fontThemePrefix" };
+export const OPTION_NAMES = {
+  COLOR_FORMAT: 'colorFormat',
+  TEXT_BASE_COMPONENT: 'textBaseComponent',
+  COLOR_THEME_PREFIX: 'colorThemePrefix',
+  FONT_THEME_PREFIX: 'fontThemePrefix',
+  TYPOGRAPHY_COMPONENTS_PATH: 'typographyComponentsPath',
+  BLUR_COMPONENT_PATH: 'blurComponentPath'
+}

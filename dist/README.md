@@ -94,6 +94,64 @@ const ArialText = glamorous.text((props, theme) => ({
 }))
 ```
 
+#### Path to typography components
+
+When generating text layers the extension automatically imports text components created in the Zeplin `Styleguide`. This option should be the path to these components in your RN project. Default output:
+```js
+import { ArialText } from 'StyledComponents/Typography' 
+```
+With path `Style/Text`:
+```js
+import { ArialText } from 'Style/Text' 
+```
+
+#### Path to BlurView component
+
+When generating layers with a blur effect the extension automatically generates a blur view by importing [`react-native-blur`](https://github.com/react-native-community/react-native-blur). However, you might already have a blur view in your RN project, you can set the path to this view with this option. Default output:
+```js
+import { BlurView as RNBlurView } from 'react-native-blur'
+
+const StyledContainer = glamorous.view((props, theme) => ({
+  height: 100,
+  width: 100,
+  backgroundColor: '#00ffff'
+})
+
+const BlurView = glamorous(RNBlurView)({
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0
+})
+
+export const Component = props => {
+  const { children } = props
+  return <StyledContainer {...props}>
+    <BlurView blurType="dark" /> // "xlight", "light" or "dark"
+    {children}
+  </StyledContainer>
+}
+```
+With path `StyledComponents/BlurView`:
+```js
+import { BlurView } from 'StyledComponents/BlurView`'
+
+const StyledContainer = glamorous.view((props, theme) => ({
+  height: 100,
+  width: 100,
+  backgroundColor: '#00ffff'
+})
+
+export const Component = props => {
+  const { children } = props
+  return <StyledContainer {...props}>
+    <BlurView blurType="dark" /> // "xlight", "light" or "dark"
+    {children}
+  </StyledContainer>
+} 
+```
+
 ## Development
 
 This extension is developed using [zem](https://github.com/zeplin/zem), Zeplin Extension Manager. zem is a command line tool that lets you quickly create and test extensions.

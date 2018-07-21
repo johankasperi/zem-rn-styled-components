@@ -1,4 +1,4 @@
-import { HTML_TAGS } from '../constants'
+import { HTML_TAGS, JSON_SPACING } from '../constants'
 
 function escape(str) {
   return str
@@ -45,4 +45,13 @@ function selectorize(str) {
   return selectorizedStr && `.${selectorizedStr}`
 }
 
-export { isHtmlTag, round, selectorize }
+const createJavascriptStringFromObj = object => {
+  let str = JSON.stringify(object, null, JSON_SPACING)
+  str = str
+    .replace(/"(.+)":/g, '$1:')
+    .replace(/"theme.(.*)"/g, 'theme.$1')
+    .replace(/"/g, "'")
+  return str
+}
+
+export { isHtmlTag, round, selectorize, createJavascriptStringFromObj }

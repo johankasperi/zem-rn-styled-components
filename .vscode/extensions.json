@@ -1,8 +1,6 @@
 {
   "recommendations": [
     "christian-kohler.npm-intellisense",
-    "vsmobile.vscode-react-native",
-    "Orta.vscode-react-native-storybooks",
     "esbenp.prettier-vscode",
     "wayou.vscode-todo-highlight",
     "bierner.emojisense",

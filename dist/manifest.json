@@ -45,6 +45,18 @@
       "type": "text",
       "id": "fontThemePrefix",
       "default": ""
+    },
+    {
+      "name": "Path to typography components",
+      "type": "text",
+      "id": "typographyComponentsPath",
+      "default": "StyledComponents/Typography"
+    },
+    {
+      "name": "Path to blur component",
+      "type": "text",
+      "id": "blurComponentPath",
+      "default": ""
     }
   ],
   "moduleURL": "./main.js",

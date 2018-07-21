@@ -1,5 +1,6 @@
 import { generateTextComponentsFromProject } from './text-style'
 import { generateColorObjectFromProject } from './color'
+import { generateLayerComponent } from './layer'
 
 import { OPTION_NAMES } from './constants'
 
@@ -37,17 +38,18 @@ const styleguideTextStyles = (context, textStyles) => {
 }
 
 const layer = (context, layer) => {
-  const object = {
-    layerName: layer.name,
-    projectName: context.project.name
+  const options = {
+    colorFormat: context.getOption(OPTION_NAMES.COLOR_FORMAT),
+    textBaseComponent: context.getOption(OPTION_NAMES.TEXT_BASE_COMPONENT),
+    colorThemePrefix: context.getOption(OPTION_NAMES.COLOR_THEME_PREFIX),
+    fontThemePrefix: context.getOption(OPTION_NAMES.FONT_THEME_PREFIX),
+    typographyComponentsPath: context.getOption(
+      OPTION_NAMES.TYPOGRAPHY_COMPONENTS_PATH
+    ),
+    blurComponentPath: context.getOption(OPTION_NAMES.BLUR_COMPONENT_PATH)
   }
-  console.log(layer)
-  const JSONString = JSON.stringify(object, null, 2)
-
-  return {
-    code: JSONString,
-    language: 'json'
-  }
+  const code = generateLayerComponent(options, context.project, layer)
+  return { code, language: 'json' }
 }
 
 const comment = (context, text) => {

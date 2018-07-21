@@ -91,9 +91,20 @@ function toDefaultString(color) {
   return color.a < 1 ? toRGBAString(color) : toHexString(color)
 }
 
+const themeColor = (options, project, color) => {
+  const themeColor =
+    project.findColorEqual(color) ||
+    getColorStringByFormat(color, options.colorFormat)
+  const strValue = themeColor.name
+    ? `theme.${options.colorThemePrefix || 'color'}.${themeColor.name}`
+    : themeColor
+  return strValue
+}
+
 export {
   blendColors,
   getColorMapByFormat,
   toDefaultString,
-  getColorStringByFormat
+  getColorStringByFormat,
+  themeColor
 }
