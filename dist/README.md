@@ -18,14 +18,14 @@ const base = {
 Sample text components output:
 ```js
 const SampleTextStyle = glamorous.text((props, theme) => ({
-  fontFamily: theme.font.sfProTextRegular,
+  fontFamily: theme.font.arial,
   fontSize: 20,
   textAlign: "left",
   color: theme.color.black
 }))
 
 const SampleTextStyleWithColor = glamorous.text((props, theme) => ({
-  fontFamily: theme.font.sfProTextRegular,
+  fontFamily: theme.font.arial,
   fontSize: 20,
   textAlign: "left",
   color: theme.color.red
@@ -47,6 +47,21 @@ const colors = {
   red: "hsl(0, 100%, 50%)",
   black50: "hsla(0, 0%, 0%, 0.5)"
 };
+```
+
+#### Text base component
+
+Set the base component for all texts. Default output:
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  fontSize: 20
+}))
+```
+With base component `Base`:
+```js
+const SampleTextStyle = glamorous(Base)((props, theme) => ({
+  fontSize: 20
+}))
 ```
 
 #### Theme namespace for colors in styled components

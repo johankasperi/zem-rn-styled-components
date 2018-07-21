@@ -1,6 +1,6 @@
 {
   "name": "React Native Styled Components",
-  "description": "Zepling extension to generate DN type styled components",
+  "description": "Zeplin extension that generates glamorous type styled components for React Native.",
   "version": "0.1.0",
   "options": [
     {

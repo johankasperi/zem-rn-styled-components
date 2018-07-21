@@ -41,7 +41,7 @@ const layer = (context, layer) => {
     layerName: layer.name,
     projectName: context.project.name
   }
-
+  console.log(layer)
   const JSONString = JSON.stringify(object, null, 2)
 
   return {
@@ -60,7 +60,7 @@ const exportStyleguideColors = (context, colors) => {
 
   return {
     code,
-    filename: 'colors.js',
+    filename: 'index.js',
     language: 'javascript'
   }
 }
@@ -71,7 +71,7 @@ const exportStyleguideTextStyles = (context, textStyles) => {
 
   return {
     code,
-    filename: 'Fonts.js',
+    filename: 'index.js',
     language: 'javascript'
   }
 }
