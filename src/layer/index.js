@@ -144,7 +144,6 @@ const generateLayerComponentWithText = (
     </StyledContainer>
   }`
   } else {
-    containerStyle.rect = layer.rect
     const containerStyleStr = createJavascriptStringFromObj(containerStyle)
     code += `export const Component = glamorous(${
       textComponentNames[0]

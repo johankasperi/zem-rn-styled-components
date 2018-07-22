@@ -3,6 +3,7 @@
 Generates React Native [Glamorous](https://github.com/robinpowered/glamorous-native) type Styled Components and Themes from colors, text styles and layers. ⚛️📱
 
 Sample colors output:
+
 ```js
 const base = {
   red: "#ff0000",
@@ -12,29 +13,36 @@ const base = {
   black: "#000000",
   black50: "rgba(0, 0, 0, 0.5)",
   white: "#ffffff"
-}
+};
 ```
 
 Sample text components output:
+
 ```js
 const SampleTextStyle = glamorous.text((props, theme) => ({
   fontFamily: theme.font.arial,
   fontSize: 20,
   textAlign: "left",
   color: theme.color.black
-}))
+}));
 
 const SampleTextStyleWithColor = glamorous.text((props, theme) => ({
   fontFamily: theme.font.arial,
   fontSize: 20,
   textAlign: "left",
   color: theme.color.red
-}))
+}));
 ```
 
 Sample layer output:
+
 ```js
-Not supported yet.
+import { SampleTextStyle } from 'StyledComponents/Typography'
+
+export const Component = glamorous(SampleTextStyle){((props, theme) => ({
+  height: 24,
+  width: 220,
+})
 ```
 
 ## Options
@@ -42,6 +50,7 @@ Not supported yet.
 #### Color format
 
 Supports HEX, RGB or HSL. Sample colors output as HSL:
+
 ```js
 const colors = {
   red: "hsl(0, 100%, 50%)",
@@ -52,62 +61,75 @@ const colors = {
 #### Text base component
 
 Set the base component for all texts. Default output:
+
 ```js
 const SampleTextStyle = glamorous.text((props, theme) => ({
   fontSize: 20
-}))
+}));
 ```
+
 With base component `Base`:
+
 ```js
 const SampleTextStyle = glamorous(Base)((props, theme) => ({
   fontSize: 20
-}))
+}));
 ```
 
 #### Theme namespace for colors in styled components
 
 Namespace for all color type vars in styled components. Use this option if you have a certain namespace in your theme for your colors. Default output:
+
 ```js
 const RedView = glamorous.view((props, theme) => ({
   backgroundColor: theme.color.red
-}))
+}));
 ```
+
 With namespace `V2.Color`:
+
 ```js
 const RedView = glamorous.view((props, theme) => ({
   backgroundColor: theme.V2.Color.red
-}))
+}));
 ```
 
 #### Theme namespace for texts in styled components
 
 Namespace for all font type vars in styled components. Use this option if you have a certain namespace in your theme for your fonts. Default output:
+
 ```js
 const ArialText = glamorous.text((props, theme) => ({
   fontFamily: theme.font.arial
-}))
+}));
 ```
+
 With namespace `V2.Font`:
+
 ```js
 const ArialText = glamorous.text((props, theme) => ({
   fontFamily: theme.V2.Font.arial
-}))
+}));
 ```
 
 #### Path to typography components
 
 When generating text layers the extension automatically imports text components created in the Zeplin `Styleguide`. This option should be the path to these components in your RN project. Default output:
+
 ```js
-import { ArialText } from 'StyledComponents/Typography' 
+import { ArialText } from "StyledComponents/Typography";
 ```
+
 With path `Style/Text`:
+
 ```js
-import { ArialText } from 'Style/Text' 
+import { ArialText } from "Style/Text";
 ```
 
 #### Path to BlurView component
 
 When generating layers with a blur effect the extension automatically generates a blur view by importing [`react-native-blur`](https://github.com/react-native-community/react-native-blur). However, you might already have a blur view in your RN project, you can set the path to this view with this option. Default output:
+
 ```js
 import { BlurView as RNBlurView } from 'react-native-blur'
 
@@ -133,7 +155,9 @@ export const Component = props => {
   </StyledContainer>
 }
 ```
+
 With path `StyledComponents/BlurView`:
+
 ```js
 import { BlurView } from 'StyledComponents/BlurView`'
 
@@ -149,8 +173,13 @@ export const Component = props => {
     <BlurView blurType="dark" /> // "xlight", "light" or "dark"
     {children}
   </StyledContainer>
-} 
+}
 ```
+
+## Roadmap
+
+- Implement usage of a `Spacing` component that handles position/margins.
+- Use flexbox to position components.
 
 ## Development
 

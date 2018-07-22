@@ -53,7 +53,7 @@ export const generateTextComponentFromTextStyle = (
   const baseComponent = options.textBaseComponent
     ? `(${options.textBaseComponent})`
     : '.text'
-  return `const ${componentName} = glamorous${baseComponent}((props, theme) => (${textStylesStr}))`
+  return `export const ${componentName} = glamorous${baseComponent}((props, theme) => (${textStylesStr}))`
 }
 
 export { generateTextComponentsFromProject }
