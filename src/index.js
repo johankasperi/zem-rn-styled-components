@@ -49,7 +49,7 @@ const layer = (context, layer) => {
     blurComponentPath: context.getOption(OPTION_NAMES.BLUR_COMPONENT_PATH)
   }
   const code = generateLayerComponent(options, context.project, layer)
-  return { code, language: 'json' }
+  return { code, language: 'javascript' }
 }
 
 const comment = (context, text) => {
