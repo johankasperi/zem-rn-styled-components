@@ -2,7 +2,7 @@
 
 Generates React Native [Glamorous](https://github.com/robinpowered/glamorous-native) type Styled Components and Themes from colors, text styles and layers. ⚛️📱
 
-Sample colors output:
+#### 🎨 Sample colors output:
 
 ```js
 const base = {
@@ -16,7 +16,7 @@ const base = {
 };
 ```
 
-Sample text components output:
+#### 🔤 Sample text components output:
 
 ```js
 const SampleTextStyle = glamorous.text((props, theme) => ({
@@ -34,7 +34,7 @@ const SampleTextStyleWithColor = glamorous.text((props, theme) => ({
 }));
 ```
 
-Sample layer output:
+#### 🍰 Sample layer output:
 
 ```js
 import { SampleTextStyle } from 'StyledComponents/Typography'
@@ -45,7 +45,7 @@ export const Component = glamorous(SampleTextStyle){((props, theme) => ({
 })
 ```
 
-## Options
+## ⚙️ Options
 
 #### Color format
 
@@ -176,11 +176,11 @@ export const Component = props => {
 }
 ```
 
-## Roadmap
+## 📝 Roadmap
 
 - Implement usage of a `Spacing` component that handles position/margins.
 - Use flexbox to position components.
 
-## Development
+## 🏗 Development
 
 This extension is developed using [zem](https://github.com/zeplin/zem), Zeplin Extension Manager. zem is a command line tool that lets you quickly create and test extensions.
