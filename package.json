@@ -8,6 +8,15 @@
     "clean": "zem clean",
     "exec": "zem exec"
   },
+  "author": {
+    "name": "Johan Kasperi",
+    "email": "johan@kasperi.se",
+    "url": "http://kspri.se"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johankasperi/zem-rn-styled-components.git"
+  },
   "zeplin": {
     "displayName": "React Native Styled Components",
     "options": [
