@@ -31,7 +31,6 @@ export const generateTextComponentFromTextStyle = (
   options,
   textStyle
 ) => {
-  const colorValue = themeColor(options, project, textStyle.color)
   const styleObj = {
     fontFamily: `theme.${options.fontThemePrefix || 'font'}.${generateName(
       textStyle.fontFace
@@ -45,14 +44,18 @@ export const generateTextComponentFromTextStyle = (
     letterSpacing:
       textStyle.letterSpacing &&
       round(textStyle.letterSpacing, NUMERICAL_DECIMAL_PRECISION),
-    textAlign: textStyle.textAlign,
-    color: colorValue
+    textAlign: textStyle.textAlign
   }
   const textStylesStr = createJavascriptStringFromObj(styleObj)
   const componentName = uppercaseFirst(generateName(textStyle.name))
   const baseComponent = options.textBaseComponent
     ? `(${options.textBaseComponent})`
     : '.text'
+
+  if (textStyle.color) {
+    styleObj.color = themeColor(options, project, textStyle.color)
+  }
+
   return `export const ${componentName} = glamorous${baseComponent}((props, theme) => (${textStylesStr}))`
 }
 
