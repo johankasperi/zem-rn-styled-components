@@ -135,6 +135,7 @@ export const HTML_TAGS = [
 ]
 export const OPTION_NAMES = {
   COLOR_FORMAT: 'colorFormat',
+  FONT_SCALE: 'fontScale',
   TEXT_BASE_COMPONENT: 'textBaseComponent',
   COLOR_THEME_PREFIX: 'colorThemePrefix',
   FONT_THEME_PREFIX: 'fontThemePrefix',

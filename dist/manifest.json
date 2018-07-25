@@ -2,6 +2,11 @@
   "name": "React Native Styled Components",
   "description": "Zeplin extension that generates glamorous type styled components for React Native.",
   "version": "0.1.0",
+  "author": {
+    "name": "Johan Kasperi",
+    "email": "johan@kasperi.se",
+    "url": "http://kspri.se"
+  },
   "options": [
     {
       "name": "Color format",
@@ -27,6 +32,12 @@
         }
       ],
       "default": "default"
+    },
+    {
+      "name": "Add font scale property to texts",
+      "type": "switch",
+      "id": "fontScale",
+      "default": false
     },
     {
       "name": "Text base component",
@@ -59,6 +70,7 @@
       "default": ""
     }
   ],
-  "moduleURL": "./main.js",
+  "moduleURL": "./main.485a1c72.js",
+  "repository": "https://github.com/johankasperi/zem-rn-styled-components.git",
   "readmeURL": "./README.md"
 }

@@ -36,12 +36,14 @@ export const generateTextComponentFromTextStyle = (
     fontFamily: `theme.${options.fontThemePrefix || 'font'}.${generateName(
       textStyle.fontFace
     )}`,
-    fontSize:
-      textStyle.fontSize &&
-      round(textStyle.fontSize, NUMERICAL_DECIMAL_PRECISION),
-    lineHeight:
-      textStyle.lineHeight &&
-      round(textStyle.lineHeight, NUMERICAL_DECIMAL_PRECISION),
+    fontSize: `${textStyle.fontSize &&
+      round(textStyle.fontSize, NUMERICAL_DECIMAL_PRECISION)}${
+      options.fontScale ? ' * (props.fontScale || 1)' : ''
+    }`,
+    lineHeight: `${textStyle.lineHeight &&
+      round(textStyle.lineHeight, NUMERICAL_DECIMAL_PRECISION)}${
+      options.lineHeight ? ' * (props.fontScale || 1)' : ''
+    }`,
     letterSpacing:
       textStyle.letterSpacing &&
       round(textStyle.letterSpacing, NUMERICAL_DECIMAL_PRECISION),
@@ -49,6 +51,8 @@ export const generateTextComponentFromTextStyle = (
     color: colorValue
   }
   const textStylesStr = createJavascriptStringFromObj(styleObj)
+    .replace(/fontSize: '(.*)'/g, 'fontSize: $1')
+    .replace(/lineHeight: '(.*)'/g, 'lineHeight: $1')
   const componentName = uppercaseFirst(generateName(textStyle.name))
   const baseComponent = options.textBaseComponent
     ? `(${options.textBaseComponent})`

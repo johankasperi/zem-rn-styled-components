@@ -46,6 +46,12 @@
         "default": "default"
       },
       {
+        "name": "Add fontscale property to texts",
+        "type": "switch",
+        "id": "fontScale",
+        "default": false
+      },
+      {
         "name": "Text base component",
         "type": "text",
         "id": "textBaseComponent",

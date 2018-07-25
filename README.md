@@ -58,6 +58,26 @@ const colors = {
 };
 ```
 
+#### Add font scale property to texts
+
+Adds support for a `fontScale` property to all Text components. Default output:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  fontSize: 20,
+  lineHeight: 22
+}));
+```
+
+`fontScale` enabled:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  fontSize: 20 * (props.fontScale || 1),
+  lineHeight: 22 * (props.fontScale || 1)
+}));
+```
+
 #### Text base component
 
 Set the base component for all texts. Default output:
