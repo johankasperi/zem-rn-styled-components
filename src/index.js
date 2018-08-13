@@ -21,6 +21,7 @@ const styleguideTextStyles = (context, textStyles) => {
   const options = {
     colorFormat: context.getOption(OPTION_NAMES.COLOR_FORMAT),
     fontScale: context.getOption(OPTION_NAMES.FONT_SCALE),
+    colorOverride: context.getOption(OPTION_NAMES.COLOR_OVERRIDE),
     textBaseComponent: context.getOption(OPTION_NAMES.TEXT_BASE_COMPONENT),
     colorThemePrefix: context.getOption(OPTION_NAMES.COLOR_THEME_PREFIX),
     fontThemePrefix: context.getOption(OPTION_NAMES.FONT_THEME_PREFIX)

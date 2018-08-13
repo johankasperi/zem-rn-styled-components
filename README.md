@@ -78,6 +78,24 @@ const SampleTextStyle = glamorous.text((props, theme) => ({
 }));
 ```
 
+#### Add color property to texts
+
+Adds support for a `color` property to all Text components. Default output:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  color: "red"
+}));
+```
+
+`color` enabled:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  color: props.color || "red"
+}));
+```
+
 #### Text base component
 
 Set the base component for all texts. Default output:

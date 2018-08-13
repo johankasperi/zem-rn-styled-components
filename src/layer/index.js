@@ -67,7 +67,7 @@ const generateLayerComponent = (options, project, layer) => {
     )
   }
   const containerStyleStr = createJavascriptStringFromObj(containerStyle)
-  let code = `const StyledContainer = glamorous.view((props, theme) => (${containerStyleStr})`
+  let code = `const StyledContainer = glamorous.view((props, theme) => (${containerStyleStr}))`
   return code
 }
 
@@ -134,7 +134,7 @@ const generateLayerComponentWithText = (
       }>`
     }
     const containerStyleStr = createJavascriptStringFromObj(containerStyle)
-    code += `const StyledContainer = glamorous.view((props, theme) => (${containerStyleStr})\n\n`
+    code += `const StyledContainer = glamorous.view((props, theme) => (${containerStyleStr}))\n\n`
     code += `export const Component = props => {
     const { ${layer.textStyles.map(
     (_, i) => (i > 0 ? ' ' : '') + 'text' + i
@@ -147,7 +147,7 @@ const generateLayerComponentWithText = (
     const containerStyleStr = createJavascriptStringFromObj(containerStyle)
     code += `export const Component = glamorous(${
       textComponentNames[0]
-    }){((props, theme) => (${containerStyleStr})`
+    })((props, theme) => (${containerStyleStr}))`
   }
 
   return code
@@ -165,7 +165,7 @@ const generateLayerComponentWithBlur = (
   } else {
     code = "import { BlurView as RNBlurView } from 'react-native-blur'\n\n"
     const containerStyleStr = createJavascriptStringFromObj(containerStyle)
-    code += `const StyledContainer = glamorous.view((props, theme) => (${containerStyleStr})\n\n`
+    code += `const StyledContainer = glamorous.view((props, theme) => (${containerStyleStr}))\n\n`
     code += `const BlurView = glamorous(RNBlurView)({
     position: 'absolute',
     top: 0,

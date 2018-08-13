@@ -48,11 +48,12 @@ export const generateTextComponentFromTextStyle = (
       textStyle.letterSpacing &&
       round(textStyle.letterSpacing, NUMERICAL_DECIMAL_PRECISION),
     textAlign: textStyle.textAlign,
-    color: colorValue
+    color: `${options.colorOverride ? 'props.color || ' : ''}${colorValue}`
   }
   const textStylesStr = createJavascriptStringFromObj(styleObj)
     .replace(/fontSize: '(.*)'/g, 'fontSize: $1')
     .replace(/lineHeight: '(.*)'/g, 'lineHeight: $1')
+    .replace(/color: '(.*)'/g, 'color: $1')
   const componentName = uppercaseFirst(generateName(textStyle.name))
   const baseComponent = options.textBaseComponent
     ? `(${options.textBaseComponent})`

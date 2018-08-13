@@ -52,6 +52,12 @@
         "default": false
       },
       {
+        "name": "Add color property to texts",
+        "type": "switch",
+        "id": "colorOverride",
+        "default": false
+      },
+      {
         "name": "Text base component",
         "type": "text",
         "id": "textBaseComponent",
