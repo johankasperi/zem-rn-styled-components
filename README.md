@@ -223,6 +223,9 @@ export const Component = props => {
 
 This extension is developed using [zem](https://github.com/zeplin/zem), Zeplin Extension Manager. zem is a command line tool that lets you quickly create and test extensions.
 
+This extension is open source, you can find it on Github:
+[https://github.com/johankasperi/zem-rn-styled-components](https://github.com/johankasperi/zem-rn-styled-components)
+
 ## License
 
 MIT License
