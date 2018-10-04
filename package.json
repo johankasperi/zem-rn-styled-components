@@ -1,6 +1,6 @@
 {
   "name": "zem-rn-styled-components",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Zeplin extension that generates glamorous type styled components for React Native.",
   "scripts": {
     "start": "zem start",
