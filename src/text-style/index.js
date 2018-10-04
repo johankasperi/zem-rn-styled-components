@@ -39,10 +39,6 @@ export const generateTextComponentFromTextStyle = (
       round(textStyle.fontSize, NUMERICAL_DECIMAL_PRECISION)}${
       options.fontScale ? ' * (props.fontScale || 1)' : ''
     }`,
-    lineHeight: `${textStyle.lineHeight &&
-      round(textStyle.lineHeight, NUMERICAL_DECIMAL_PRECISION)}${
-      options.lineHeight ? ' * (props.fontScale || 1)' : ''
-    }`,
     letterSpacing:
       textStyle.letterSpacing &&
       round(textStyle.letterSpacing, NUMERICAL_DECIMAL_PRECISION),
@@ -53,6 +49,12 @@ export const generateTextComponentFromTextStyle = (
     styleObj.color = `${
       options.colorOverride ? 'props.color || ' : ''
     }${colorValue}`
+  }
+  if (textStyle.lineHeight) {
+    styleObj.lineHeight = `${textStyle.lineHeight &&
+      round(textStyle.lineHeight, NUMERICAL_DECIMAL_PRECISION)}${
+      options.lineHeight ? ' * (props.fontScale || 1)' : ''
+    }`
   }
 
   const textStylesStr = createJavascriptStringFromObj(styleObj)
