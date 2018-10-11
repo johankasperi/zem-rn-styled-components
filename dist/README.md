@@ -58,6 +58,44 @@ const colors = {
 };
 ```
 
+#### Add font scale property to texts
+
+Adds support for a `fontScale` property to all Text components. Default output:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  fontSize: 20,
+  lineHeight: 22
+}));
+```
+
+`fontScale` enabled:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  fontSize: 20 * (props.fontScale || 1),
+  lineHeight: 22 * (props.fontScale || 1)
+}));
+```
+
+#### Add color property to texts
+
+Adds support for a `color` property to all Text components. Default output:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  color: "red"
+}));
+```
+
+`color` enabled:
+
+```js
+const SampleTextStyle = glamorous.text((props, theme) => ({
+  color: props.color || "red"
+}));
+```
+
 #### Text base component
 
 Set the base component for all texts. Default output:
@@ -184,6 +222,9 @@ export const Component = props => {
 ## 🏗 Development
 
 This extension is developed using [zem](https://github.com/zeplin/zem), Zeplin Extension Manager. zem is a command line tool that lets you quickly create and test extensions.
+
+This extension is open source, you can find it on Github:
+[https://github.com/johankasperi/zem-rn-styled-components](https://github.com/johankasperi/zem-rn-styled-components)
 
 ## License
 
