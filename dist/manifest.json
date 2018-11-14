@@ -2,7 +2,7 @@
   "packageName": "zem-rn-styled-components",
   "name": "React Native Styled Components",
   "description": "Zeplin extension that generates glamorous type styled components for React Native.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": {
     "name": "Johan Kasperi",
     "email": "johan@kasperi.se",
@@ -81,7 +81,7 @@
     "ios",
     "android"
   ],
-  "moduleURL": "./main.963574b1.js",
+  "moduleURL": "./main.3b3f171a.js",
   "repository": "https://github.com/johankasperi/zem-rn-styled-components.git",
   "readmeURL": "./README.md"
 }
