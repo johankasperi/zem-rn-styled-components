@@ -53,7 +53,7 @@ export const generateTextComponentFromTextStyle = (
   if (textStyle.lineHeight) {
     styleObj.lineHeight = `${textStyle.lineHeight &&
       round(textStyle.lineHeight, NUMERICAL_DECIMAL_PRECISION)}${
-      options.lineHeight ? ' * (props.fontScale || 1)' : ''
+      options.fontScale ? ' * (props.fontScale || 1)' : ''
     }`
   }
 
